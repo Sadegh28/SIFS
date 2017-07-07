@@ -14,8 +14,11 @@ Remarks:
 1- To use mIFS, normalize the data using the following commands: 
 
 >> R = bsxfun( @minus, X, min(X));
+
 >> R = bsxfun( @rdivide, dataR, max(dataR));
+
 >> features_kept = find( isnan( sum(dataR) ) | isinf( sum(dataR) ) );
+
 >> R(:,features_kept)=0;
 >> X=dataR;
 
