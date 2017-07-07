@@ -18,7 +18,7 @@ To run the supervised SIFS, issue the following command:
 In both commands, alpha is a coefficient ranging from 0 to 1. This parameter can be set using cross-validation on training data X. 
 
 ## Remarks: 
-1. To use mIFS, normalize the data using the following commands:
+1. To use mIFS, we recommend normalizing the data using the following commands (see [the paper](https://arxiv.org/abs/1704.02665) for details):
     ```
     >> R = bsxfun( @minus, X, min(X));
     >> R = bsxfun( @rdivide, dataR, max(dataR));
@@ -27,7 +27,7 @@ In both commands, alpha is a coefficient ranging from 0 to 1. This parameter can
     >> X=dataR;
     ```
 
-2. To use SIFS, standardize the data using the following command: 
+2. To use SIFS, we recommend standardizing the data using the following command (see [the paper](https://arxiv.org/abs/1704.02665) for details): 
     ```
-    >> X=zscore(trainX);
+    >> X = zscore(trainX);  % Note that the same zscore transformation should be applied to test data
     ```
